@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:14px;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.7;color:#262626;background:#f0fdf4;overflow-x:hidden;word-break:break-all;overflow-wrap:break-word}
+:root{--accent:#10b981;--accent-light:#ecfdf5}
+.card{position:relative;width:100%;max-width:420px;margin:0 auto;padding:24px 20px}
+.card-title{font-size:17px;font-weight:600;line-height:1.4;color:#262626;margin-bottom:4px}
+.card-subtitle{font-size:12px;color:#737373;margin-bottom:20px}
+.divider{height:1px;background:#e8e8e8;margin:16px 0;border:none}
+.pet-avatar{width:64px;height:64px;background:#ecfdf5;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:16px;border:2px solid #10b981}
+.info-row{display:flex;justify-content:space-between;padding:8px 0;font-size:12px;border-bottom:1px solid #f5f5f5}
+.info-row:last-child{border-bottom:none}
+.info-label{color:#737373}
+.info-value{font-weight:500;color:#262626}
+.section-label{font-size:11px;color:#a3a3a3;margin-bottom:8px}
+.step{display:flex;gap:12px;padding:12px 0}
+.step-num{flex-shrink:0;width:24px;height:24px;background:#10b981;color:#fff;font-size:11px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.step-text{flex:1;font-size:14px;line-height:1.7;color:#404040}
+.step-note{font-size:11px;color:#a3a3a3;margin-top:2px}
+.highlight{padding:12px 16px;background:#ecfdf5;border-radius:12px;font-size:12px;color:#059669;line-height:1.7;margin:12px 0}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tag{display:inline-block;padding:2px 8px;font-size:11px;line-height:1.6;border-radius:999px;background:#ecfdf5;color:#059669}
+.signature{margin-top:24px;padding-top:16px;border-top:1px solid #e8e8e8;font-size:12px;color:#737373;text-align:right}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="pet-avatar">🐱</div>
+  <h1 class="card-title">🐾 阿布的晚餐纪录</h1>
+  <div class="card-subtitle">这是陆夏认认真真给小猫准备的"大餐"</div>
+
+  <div class="tag-row">
+    <span class="tag">橘猫</span>
+    <span class="tag">1岁半</span>
+    <span class="tag">贪吃鬼</span>
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">今日体重</span>
+    <span class="info-value">4.2 kg（又胖了）</span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">心情指数</span>
+    <span class="info-value">⭐⭐⭐⭐⭐</span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">撒娇次数</span>
+    <span class="info-value">数不清</span>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">今日喂食流程</div>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-text">
+      打开小鱼干的罐头，阿布立刻从沙发上弹射过来。
+      <div class="step-note">用时 0.3 秒，破了昨天的纪录</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-text">
+      把猫粮和小鱼干按 3:1 比例混合，摆成爱心形状。
+      <div class="step-note">虽然阿布根本不在乎形状</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-text">
+      在旁边放了一小碟温水，水温 37°C，用手背测过的。
+      <div class="step-note">网上说猫咪喜欢温水</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-text">
+      蹲在旁边看它吃完，顺便摸了 14 下脑袋。
+    </div>
+  </div>
+
+  <div class="highlight">
+    阿布吃完以后用脑袋蹭了我的手心，我觉得这是全世界最好的事情。
+  </div>
+
+  <div class="signature">—— 陆夏</div>
+</div>
+</body>
+</html>

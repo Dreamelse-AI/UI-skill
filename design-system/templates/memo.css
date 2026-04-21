@@ -1,0 +1,70 @@
+/*
+ * 模板 1: 备忘录 / Memo
+ * 适用: 备忘录、笔记、碎碎念、纸条、便签
+ * 风格: 手写感、纸张质感、温暖私密
+ */
+
+.tpl-memo {
+  --accent: #f5a623;
+  --accent-light: #fef9ee;
+  --accent-text: #b87a10;
+  background: linear-gradient(180deg, #fffdf7 0%, #fff9ed 100%);
+}
+
+.tpl-memo .card {
+  background: transparent;
+}
+
+/* 纸张纹理线 */
+.tpl-memo .memo-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #f0e6d3 31px,
+    #f0e6d3 32px
+  );
+  background-position: 0 60px;
+  opacity: 0.5;
+}
+
+/* 左侧红色装订线 */
+.tpl-memo .memo-margin {
+  position: absolute;
+  left: 36px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #e8a0a0;
+  opacity: 0.4;
+}
+
+.tpl-memo .card {
+  padding-left: 48px;
+}
+
+.tpl-memo .card-title {
+  font-size: var(--font-lg);
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.tpl-memo .card-body {
+  font-size: var(--font-base);
+  line-height: 32px;
+  color: var(--gray-700);
+}
+
+.tpl-memo .memo-date {
+  font-size: var(--font-xs);
+  color: var(--gray-400);
+  margin-bottom: var(--sp-4);
+}
+
+.tpl-memo .signature {
+  border-top: none;
+  font-style: italic;
+  color: var(--gray-400);
+}

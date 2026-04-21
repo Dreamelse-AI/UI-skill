@@ -1,0 +1,115 @@
+/*
+ * 模板 3: 报告 / Report
+ * 适用: 报告、报表、分析、数据、战报、心率监测
+ * 风格: 数据感、专业冷静、结构清晰
+ */
+
+.tpl-report {
+  --accent: #6366f1;
+  --accent-light: #eef2ff;
+  --accent-text: #4f46e5;
+  background: #f8fafc;
+}
+
+.tpl-report .card {
+  background: #ffffff;
+  border: 1px solid var(--gray-200);
+}
+
+/* 报告头部 */
+.tpl-report .report-header {
+  padding-bottom: var(--sp-4);
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: var(--sp-5);
+}
+
+.tpl-report .report-header .card-title {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.tpl-report .report-meta {
+  display: flex;
+  gap: var(--sp-4);
+  margin-top: var(--sp-2);
+  font-size: var(--font-xs);
+  color: var(--gray-400);
+}
+
+/* 数据行 */
+.tpl-report .data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: var(--font-base);
+}
+
+.tpl-report .data-label {
+  color: var(--gray-500);
+  font-size: var(--font-sm);
+}
+
+.tpl-report .data-value {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 高亮数据卡 */
+.tpl-report .data-card {
+  padding: var(--sp-4);
+  background: var(--accent-light);
+  border-radius: var(--radius-md);
+  margin: var(--sp-3) 0;
+  text-align: center;
+}
+
+.tpl-report .data-card .data-big {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--accent-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.tpl-report .data-card .data-desc {
+  font-size: var(--font-xs);
+  color: var(--gray-400);
+  margin-top: var(--sp-1);
+}
+
+/* 分析条目 */
+.tpl-report .analysis-item {
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.tpl-report .analysis-item:last-child {
+  border-bottom: none;
+}
+
+.tpl-report .analysis-dim {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--accent-text);
+  margin-bottom: var(--sp-1);
+}
+
+.tpl-report .analysis-desc {
+  font-size: var(--font-sm);
+  color: var(--gray-600);
+  line-height: var(--lh-base);
+}
+
+/* 结论区 */
+.tpl-report .conclusion {
+  margin-top: var(--sp-5);
+  padding: var(--sp-4);
+  background: var(--gray-50);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: var(--font-sm);
+  color: var(--gray-600);
+  line-height: var(--lh-base);
+}

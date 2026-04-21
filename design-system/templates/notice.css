@@ -1,0 +1,87 @@
+/*
+ * 模板 5: 公告 / Notice
+ * 适用: 公告、通知、声明、禁令、规则、预警、须知
+ * 风格: 正式感、醒目、层级分明
+ */
+
+.tpl-notice {
+  --accent: #ef4444;
+  --accent-light: #fef2f2;
+  --accent-text: #dc2626;
+  background: #ffffff;
+}
+
+/* 顶部警示条 */
+.tpl-notice .notice-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  margin: calc(-1 * var(--safe-y)) calc(-1 * var(--safe-x)) var(--sp-5);
+  background: var(--accent);
+  color: #ffffff;
+  font-size: var(--font-sm);
+  font-weight: 600;
+}
+
+.tpl-notice .notice-bar .icon {
+  font-size: var(--font-lg);
+}
+
+.tpl-notice .card-title {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+/* 条款列表 */
+.tpl-notice .clause {
+  padding: var(--sp-3) 0;
+  border-bottom: 1px dashed var(--gray-200);
+  font-size: var(--font-base);
+  line-height: var(--lh-base);
+}
+
+.tpl-notice .clause:last-child {
+  border-bottom: none;
+}
+
+.tpl-notice .clause-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  color: #fff;
+  font-size: var(--font-xs);
+  font-weight: 700;
+  border-radius: 50%;
+  margin-right: var(--sp-2);
+  vertical-align: middle;
+}
+
+/* 重点强调 */
+.tpl-notice .highlight-box {
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--accent-light);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  font-size: var(--font-sm);
+  color: var(--accent-text);
+  margin: var(--sp-4) 0;
+  line-height: var(--lh-base);
+}
+
+/* 盖章/签署区 */
+.tpl-notice .stamp {
+  margin-top: var(--sp-6);
+  text-align: right;
+  font-size: var(--font-sm);
+  color: var(--gray-500);
+}
+
+.tpl-notice .stamp .stamp-name {
+  font-weight: 600;
+  color: var(--gray-700);
+}

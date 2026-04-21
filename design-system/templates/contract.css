@@ -1,0 +1,98 @@
+/*
+ * 模板 6: 合同 / Contract
+ * 适用: 合同、契约、保证书、承诺、约定
+ * 风格: 正式文书感、复古纸张、仪式感
+ */
+
+.tpl-contract {
+  --accent: #92400e;
+  --accent-light: #fef3c7;
+  --accent-text: #92400e;
+  background: linear-gradient(180deg, #fefce8 0%, #fef9c3 100%);
+}
+
+.tpl-contract .card {
+  background: transparent;
+  border: 2px solid #d4a574;
+  border-radius: var(--radius-md);
+  padding: var(--sp-8) var(--safe-x);
+}
+
+/* 文书标题 */
+.tpl-contract .contract-title {
+  text-align: center;
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--gray-800);
+  letter-spacing: 4px;
+  margin-bottom: var(--sp-2);
+}
+
+.tpl-contract .contract-no {
+  text-align: center;
+  font-size: var(--font-xs);
+  color: var(--gray-400);
+  margin-bottom: var(--sp-6);
+}
+
+/* 条款 */
+.tpl-contract .term {
+  padding: var(--sp-3) 0;
+  font-size: var(--font-base);
+  line-height: var(--lh-base);
+  color: var(--gray-700);
+}
+
+.tpl-contract .term-label {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+/* 分隔装饰 */
+.tpl-contract .ornament {
+  text-align: center;
+  color: var(--gray-300);
+  font-size: var(--font-sm);
+  margin: var(--sp-4) 0;
+  letter-spacing: 8px;
+}
+
+/* 签署区 */
+.tpl-contract .sign-area {
+  margin-top: var(--sp-8);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+.tpl-contract .sign-block {
+  flex: 1;
+  text-align: center;
+}
+
+.tpl-contract .sign-line {
+  border-bottom: 1px solid var(--gray-400);
+  margin-bottom: var(--sp-1);
+  height: 32px;
+}
+
+.tpl-contract .sign-label {
+  font-size: var(--font-xs);
+  color: var(--gray-400);
+}
+
+/* 印章效果 */
+.tpl-contract .seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  transform: rotate(-15deg);
+  opacity: 0.7;
+}

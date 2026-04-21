@@ -1,0 +1,241 @@
+/*
+ * AIGC 角色聊天卡片 — 通用设计规范 (Base Design Tokens + Reset)
+ * 适用于移动端 WebView 内嵌展示，宽度 ≤ 420px
+ */
+
+/* ========== 1. Design Tokens ========== */
+:root {
+  /* 字号体系 — 移动端阅读舒适区 */
+  --font-xs: 11px;
+  --font-sm: 12px;
+  --font-base: 14px;
+  --font-md: 15px;
+  --font-lg: 17px;
+  --font-xl: 20px;
+  --font-2xl: 24px;
+
+  /* 行高 — 中文排版黄金比例 */
+  --lh-tight: 1.4;
+  --lh-base: 1.7;
+  --lh-loose: 1.9;
+
+  /* 间距体系 — 4px 基准 */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+
+  /* 安全距离 — 卡片内容到边缘的最小距离 */
+  --safe-x: 20px;
+  --safe-y: 24px;
+
+  /* 圆角 */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* 中性色 */
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e8e8e8;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
+
+  /* 语义色 */
+  --color-text: var(--gray-800);
+  --color-text-secondary: var(--gray-500);
+  --color-text-muted: var(--gray-400);
+  --color-border: var(--gray-200);
+  --color-bg: #ffffff;
+  --color-bg-subtle: var(--gray-50);
+
+  /* 强调色（可被模板覆盖） */
+  --accent: #5b7ff5;
+  --accent-light: #eef2ff;
+  --accent-text: #3b5cc6;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.08);
+
+  /* 字体栈 */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    sans-serif;
+  --font-serif: "Noto Serif SC", "Source Han Serif SC",
+    "Songti SC", Georgia, serif;
+  --font-mono: "SF Mono", "Fira Code", "Source Code Pro",
+    Menlo, monospace;
+}
+
+/* ========== 2. Reset & Base ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-base);
+  line-height: var(--lh-base);
+  color: var(--color-text);
+  background: transparent;
+  overflow-x: hidden;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+/* ========== 3. 卡片容器 ========== */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: var(--safe-y) var(--safe-x);
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* ========== 4. 排版规则 ========== */
+
+/* 标题层级 */
+.card-title {
+  font-size: var(--font-xl);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+  margin-bottom: var(--sp-2);
+}
+
+.card-subtitle {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--sp-5);
+}
+
+/* 正文 */
+.card-body {
+  font-size: var(--font-base);
+  line-height: var(--lh-base);
+  color: var(--color-text);
+}
+
+.card-body p {
+  margin-bottom: var(--sp-3);
+}
+
+.card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* 辅助文本 */
+.text-secondary {
+  color: var(--color-text-secondary);
+  font-size: var(--font-sm);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+  font-size: var(--font-xs);
+}
+
+/* ========== 5. 分隔线 ========== */
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--sp-4) 0;
+  border: none;
+}
+
+.divider--dashed {
+  background: none;
+  border-top: 1px dashed var(--color-border);
+}
+
+/* ========== 6. 列表 ========== */
+.list {
+  list-style: none;
+}
+
+.list-item {
+  position: relative;
+  padding: var(--sp-3) 0;
+  font-size: var(--font-base);
+  line-height: var(--lh-base);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+/* ========== 7. 标签 ========== */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: var(--font-xs);
+  line-height: 1.6;
+  border-radius: var(--radius-full);
+  background: var(--accent-light);
+  color: var(--accent-text);
+}
+
+.tag--danger {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.tag--success {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.tag--warning {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+/* ========== 8. 角色署名 ========== */
+.signature {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  text-align: right;
+}
+
+/* ========== 9. 工具类 ========== */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.mt-1 { margin-top: var(--sp-1); }
+.mt-2 { margin-top: var(--sp-2); }
+.mt-3 { margin-top: var(--sp-3); }
+.mt-4 { margin-top: var(--sp-4); }
+.mb-2 { margin-bottom: var(--sp-2); }
+.mb-3 { margin-bottom: var(--sp-3); }
+.mb-4 { margin-bottom: var(--sp-4); }
+.opacity-60 { opacity: 0.6; }
+.opacity-40 { opacity: 0.4; }

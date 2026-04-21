@@ -1,0 +1,112 @@
+/*
+ * 模板 7: 定位 / Location
+ * 适用: 定位、位置、日程、行程、天气
+ * 风格: 工具感、实时数据、深色科技风
+ */
+
+.tpl-location {
+  --accent: #06b6d4;
+  --accent-light: #ecfeff;
+  --accent-text: #0891b2;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.tpl-location .card {
+  background: transparent;
+  color: #e2e8f0;
+}
+
+.tpl-location .card-title {
+  color: #f1f5f9;
+  font-size: var(--font-lg);
+}
+
+/* 状态栏 */
+.tpl-location .status-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--font-xs);
+  color: var(--accent);
+  margin-bottom: var(--sp-4);
+}
+
+.tpl-location .status-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* 信息面板 */
+.tpl-location .info-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4);
+  margin: var(--sp-3) 0;
+}
+
+.tpl-location .info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sp-2) 0;
+  font-size: var(--font-sm);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tpl-location .info-row:last-child {
+  border-bottom: none;
+}
+
+.tpl-location .info-label {
+  color: #94a3b8;
+}
+
+.tpl-location .info-value {
+  color: #f1f5f9;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 坐标显示 */
+.tpl-location .coords {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  color: #64748b;
+  margin-top: var(--sp-2);
+}
+
+/* 时间线 */
+.tpl-location .timeline-item {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+}
+
+.tpl-location .timeline-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.tpl-location .timeline-time {
+  font-size: var(--font-xs);
+  color: #64748b;
+  font-variant-numeric: tabular-nums;
+}
+
+.tpl-location .timeline-text {
+  font-size: var(--font-sm);
+  color: #cbd5e1;
+}

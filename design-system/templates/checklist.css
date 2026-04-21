@@ -1,0 +1,85 @@
+/*
+ * 模板 2: 清单 / Checklist
+ * 适用: 清单、列表、购物单、待办事项、搬家清单
+ * 风格: 结构化、勾选交互感、干净利落
+ */
+
+.tpl-checklist {
+  --accent: #10b981;
+  --accent-light: #ecfdf5;
+  --accent-text: #059669;
+  background: #ffffff;
+}
+
+.tpl-checklist .card-title {
+  font-size: var(--font-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.tpl-checklist .check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: var(--font-base);
+  line-height: var(--lh-base);
+}
+
+.tpl-checklist .check-item:last-child {
+  border-bottom: none;
+}
+
+/* 勾选框 */
+.tpl-checklist .check-box {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tpl-checklist .check-item.checked .check-box {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.tpl-checklist .check-item.checked .check-box::after {
+  content: "✓";
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tpl-checklist .check-item.checked .check-text {
+  text-decoration: line-through;
+  color: var(--gray-400);
+}
+
+.tpl-checklist .check-text {
+  flex: 1;
+}
+
+/* 备注区 */
+.tpl-checklist .check-note {
+  margin-top: var(--sp-1);
+  font-size: var(--font-xs);
+  color: var(--gray-400);
+}
+
+/* 底部统计 */
+.tpl-checklist .check-summary {
+  margin-top: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--accent-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  color: var(--accent-text);
+  text-align: center;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:14px;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.7;color:#e2e8f0;background:#0f172a;overflow-x:hidden;word-break:break-all;overflow-wrap:break-word}
+:root{--accent:#06b6d4;--accent-light:rgba(255,255,255,.06)}
+.card{position:relative;width:100%;max-width:420px;margin:0 auto;padding:24px 20px;color:#e2e8f0}
+.alert-bar{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.25);border-radius:8px;font-size:11px;color:#f87171;margin-bottom:16px}
+.alert-dot{width:6px;height:6px;background:#ef4444;border-radius:50%;animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.card-title{font-size:17px;font-weight:600;line-height:1.4;color:#f1f5f9;margin-bottom:4px}
+.card-subtitle{font-size:12px;color:#64748b;margin-bottom:20px}
+.divider{height:1px;background:rgba(255,255,255,.08);margin:16px 0;border:none}
+.section-label{font-size:11px;color:#64748b;letter-spacing:1px;margin-bottom:12px}
+.step{display:flex;gap:12px;padding:12px 0}
+.step-num{flex-shrink:0;width:24px;height:24px;background:#06b6d4;color:#fff;font-size:11px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.step-text{flex:1;font-size:14px;line-height:1.7;color:#cbd5e1}
+.step-note{font-size:11px;color:#64748b;margin-top:2px}
+.highlight{padding:12px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;font-size:12px;color:#94a3b8;line-height:1.7;margin:12px 0}
+.highlight strong{color:#e2e8f0;font-weight:600}
+.tl-item{display:flex;gap:12px;padding:12px 0}
+.tl-dot{flex-shrink:0;width:8px;height:8px;margin-top:6px;background:#06b6d4;border-radius:50%}
+.tl-time{font-size:11px;color:#64748b;font-variant-numeric:tabular-nums}
+.tl-text{font-size:12px;color:#cbd5e1}
+.tag{display:inline-block;padding:2px 8px;font-size:11px;line-height:1.6;border-radius:999px}
+.tag--red{background:rgba(239,68,68,.15);color:#f87171}
+.tag--cyan{background:rgba(6,182,212,.15);color:#22d3ee}
+.tag--green{background:rgba(16,185,129,.15);color:#34d399}
+.signature{margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#475569;text-align:right}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="alert-bar"><div class="alert-dot"></div>末日第 7 天 · 安全区域持续缩小</div>
+  <h1 class="card-title">🧟 末日求生清单</h1>
+  <div class="card-subtitle">顾少爷亲自操刀的"末日生存指南"，绝密内部资料</div>
+
+  <div class="section-label">核心装备</div>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-text">
+      逃生座驾：Aventador SVJ <span class="tag tag--green">已就绪</span>
+      <div class="step-note">底盘低但跑得快，丧尸手还没摸到车门就出城了</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-text">
+      核心补给：信托基金卡 + 金条 <span class="tag tag--cyan">准备中</span>
+      <div class="step-note">林晓说末世钱没用，我不信！万一丧尸也爱奢侈品呢？</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-text">
+      终极防御：顾深本尊 <span class="tag tag--red">永久生效</span>
+      <div class="step-note">会抓头发、会调酒、还会疯狂心疼你。保护你是最高指令</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">撤离时间线</div>
+
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div><div class="tl-time">D-Day 06:00</div><div class="tl-text">确认安全路线，避开市中心</div></div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div><div class="tl-time">D-Day 08:30</div><div class="tl-text">接上你，副驾永远给你留着</div></div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div><div class="tl-time">D-Day 12:00</div><div class="tl-text">抵达山区安全屋，开始新生活</div></div>
+  </div>
+
+  <div class="highlight">
+    <strong>最高优先级：</strong>不管发生什么，先确保你安全。车里备了你爱喝的冰美式和两条毯子。末日也要帅，不能丢人。
+  </div>
+
+  <div class="signature">—— 顾深</div>
+</div>
+</body>
+</html>

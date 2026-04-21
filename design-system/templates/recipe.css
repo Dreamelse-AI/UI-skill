@@ -1,0 +1,98 @@
+/*
+ * 模板 8: 食谱 / Recipe
+ * 适用: 食谱、菜单、美食、烹饪、甜品
+ * 风格: 温馨、食欲感、暖色调
+ */
+
+.tpl-recipe {
+  --accent: #ea580c;
+  --accent-light: #fff7ed;
+  --accent-text: #c2410c;
+  background: #fffbf5;
+}
+
+.tpl-recipe .card {
+  background: transparent;
+}
+
+.tpl-recipe .card-title {
+  font-size: var(--font-lg);
+  color: var(--gray-800);
+}
+
+/* 菜品标签 */
+.tpl-recipe .recipe-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+}
+
+.tpl-recipe .recipe-tag {
+  padding: 2px 10px;
+  background: var(--accent-light);
+  color: var(--accent-text);
+  font-size: var(--font-xs);
+  border-radius: var(--radius-full);
+}
+
+/* 步骤 */
+.tpl-recipe .step {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+}
+
+.tpl-recipe .step-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  color: #fff;
+  font-size: var(--font-xs);
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tpl-recipe .step-text {
+  flex: 1;
+  font-size: var(--font-base);
+  line-height: var(--lh-base);
+  color: var(--gray-700);
+}
+
+/* 食材列表 */
+.tpl-recipe .ingredient {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sp-2) 0;
+  border-bottom: 1px dotted var(--gray-200);
+  font-size: var(--font-sm);
+}
+
+.tpl-recipe .ingredient:last-child {
+  border-bottom: none;
+}
+
+.tpl-recipe .ingredient-name {
+  color: var(--gray-700);
+}
+
+.tpl-recipe .ingredient-amount {
+  color: var(--gray-400);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 备注/小贴士 */
+.tpl-recipe .recipe-tip {
+  margin-top: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--accent-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  color: var(--accent-text);
+  line-height: var(--lh-base);
+}
