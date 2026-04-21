@@ -42,7 +42,88 @@ AI 驱动的移动端 HTML 互动卡片生成系统。包含 8 个核心模板 +
 2. 将其中的全部内容复制到你的 system prompt 中
 3. 然后正常对话，让 AI 生成对应类型的卡片即可
 
-### 方式三：仅参考设计规范
+### 方式三：后端 API 调用 LLM 自动生成
+
+适用于自动化链路，后端服务调用 LLM API 按规范生成卡片 HTML。
+
+**推荐：按需加载模板（省 token）**
+
+先判断卡片类型，只加载对应模板，拼装精简 system prompt：
+
+```python
+import httpx
+
+REPO_BASE = "https://raw.githubusercontent.com/Dreamelse-AI/UI-skill/小手机html"
+
+# 关键词 → 模板类型映射
+KEYWORD_MAP = {
+    "memo": ["备忘录", "笔记", "纸条", "便签", "碎碎念"],
+    "checklist": ["清单", "列表", "待办", "购物", "搬家"],
+    "report": ["报告", "分析", "数据", "战报", "心率", "统计"],
+    "diary": ["日记", "日志", "心声", "独白", "自白"],
+    "notice": ["公告", "通知", "声明", "禁令", "规则", "预警"],
+    "contract": ["合同", "契约", "保证书", "承诺", "约定"],
+    "location": ["定位", "位置", "日程", "行程", "天气"],
+    "recipe": ["食谱", "菜单", "美食", "烹饪", "甜品"],
+}
+
+def classify_card_type(card_name: str) -> str:
+    for tpl, keywords in KEYWORD_MAP.items():
+        if any(kw in card_name for kw in keywords):
+            return tpl
+    return "freeform"
+
+def load_template(card_type: str) -> str:
+    url = f"{REPO_BASE}/aigc-chat-card/templates/{card_type}.md"
+    return httpx.get(url).text
+
+def generate_card(card_name: str, role_name: str, content: str) -> str:
+    card_type = classify_card_type(card_name)
+    template = load_template(card_type)
+
+    system_prompt = f"""你需要生成一个移动端 HTML 互动卡片。
+规则：
+- 输出完整 HTML（含 <!DOCTYPE html>），CSS 内联在 <style> 中
+- 禁止外部资源（字体/图片/CSS）、JavaScript、position:fixed
+- 卡片 max-width:420px 居中，内边距水平 20px 垂直 24px
+- 字号：标注 11px / 次要 12px / 正文 14px / 标题 17px
+- 颜色：主文本 #262626 / 次要 #737373 / 弱化 #a3a3a3，禁止纯黑 #000
+- 必须包含角色署名：—— {role_name}
+
+以下是模板参考（严格遵循其 CSS 和 HTML 结构）：
+{template}"""
+
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": f"卡片名称：{card_name}\n角色：{role_name}\n内容：{content}"},
+        ],
+    )
+    return response.choices[0].message.content
+
+# 调用示例
+html = generate_card("今日备忘录", "小狐狸", "今天要去超市买菜，记得带环保袋")
+```
+
+**备选：完整 Prompt 一次性加载**
+
+如果不想做类型判断，可以直接加载 `PROMPT.md` 作为 system prompt（包含全部 8 个模板，token 较多）：
+
+```python
+system_prompt = httpx.get(f"{REPO_BASE}/design-system/PROMPT.md").text
+```
+
+**生产环境建议**
+
+- 将模板文件缓存到本地或 Redis，避免每次请求都拉 GitHub
+- 也可以用 git submodule 将仓库集成到业务代码中，直接读本地文件：
+  ```bash
+  git submodule add git@github.com:Dreamelse-AI/UI-skill.git lib/ui-skill
+  ```
+- LLM 返回的 HTML 建议做一次 sanitize，过滤掉可能的 `<script>` 标签
+
+### 方式四：仅参考设计规范
 
 如果只需要了解设计约束（字号、间距、配色等），阅读 `design-system/SPEC.md`。
 
